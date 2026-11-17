@@ -116,6 +116,7 @@ def package(card, verified):
         for path in [LICENSE, proof, build / "proof.png", build / "report.md"]:
             add(path, path.name)
         add(ROOT / "docs/sources.md", "docs/sources.md")
+        add(ROOT / "docs/punchcutter-MIT.txt", "docs/punchcutter-MIT.txt")
         for path in (build / "sources").rglob("*"):
             if path.is_file():
                 add(path, path.relative_to(build))
