@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hans">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trivulzio Quill · 镜像试写</title>
+<style>
+@font-face{font-family:Quill;src:url(data:font/woff2;base64,__WOFF2__) format("woff2");font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;background:#f3e6cb;color:#402c20;font:16px/1.55 system-ui,sans-serif}
+main{max-width:950px;margin:0 auto;padding:clamp(24px,7vw,90px) 24px}
+header{border-bottom:1px solid #b7a080;margin-bottom:32px}
+h1{font:400 clamp(48px,9vw,110px)/1 Quill,serif;margin:16px 0 30px}
+label{display:block;font-weight:600}
+textarea{display:block;width:100%;min-height:78px;margin:6px 0 16px;padding:12px;
+background:#fbf1dc;color:inherit;border:1px solid #9d8264;border-radius:4px;font:inherit}
+.controls{display:flex;flex-wrap:wrap;gap:12px 30px;align-items:center}
+.controls label{display:flex;align-items:center;gap:8px}
+input{accent-color:#664b34}
+:focus-visible{outline:2px solid #734126;outline-offset:3px}
+.preview{margin:24px 0 0;padding:24px 8px;min-height:210px;border-block:1px solid #b7a080}
+output{display:block;font:400 var(--size,72px)/1.18 Quill,serif;white-space:pre-wrap;
+overflow-wrap:anywhere;transform:scaleX(var(--mirror,1))}
+</style>
+<main>
+<header><h1>Trivulzio Quill</h1></header>
+<label for="sample">试写文字</label>
+<textarea id="sample" rows="2" dir="ltr">Leonardo da Vinci
+Disegno, misura e prospettiva</textarea>
+<div class="controls">
+  <label><input type="checkbox" id="mirror"> 镜像手稿</label>
+  <label for="size">字号 <input type="range" id="size" min="24" max="140" value="72"></label>
+</div>
+<div class="preview"><output id="proof" for="sample mirror size" dir="ltr">Leonardo da Vinci
+Disegno, misura e prospettiva</output></div>
+</main>
+<script>
+const sample = document.querySelector("#sample");
+const mirror = document.querySelector("#mirror");
+const size = document.querySelector("#size");
+const proof = document.querySelector("#proof");
+function render() {
+  proof.textContent = sample.value;
+  proof.style.setProperty("--size", size.value + "px");
+  proof.style.setProperty("--mirror", mirror.checked ? "-1" : "1");
+}
+sample.addEventListener("input", render);
+mirror.addEventListener("change", render);
+size.addEventListener("input", render);
+render();
+</script>
+</html>
