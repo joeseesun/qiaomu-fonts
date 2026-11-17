@@ -152,7 +152,8 @@ def main():
     with ZipFile(combined, "w", ZIP_DEFLATED) as archive:
         archive.write(LICENSE, LICENSE.name)
         archive.write(ROOT / "README.md", "README.md")
-        archive.write(ROOT / "docs/sources.md", "docs/sources.md")
+        for name in ("sources.md", "punchcutter-MIT.txt"):
+            archive.write(ROOT / "docs" / name, "docs/" + name)
         for proof in sorted((ROOT / "specimens").glob("*.png")):
             archive.write(proof, proof.relative_to(ROOT))
         for family_zip in family_archives:
