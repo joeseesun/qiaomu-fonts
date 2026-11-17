@@ -152,8 +152,12 @@ def main():
     with ZipFile(combined, "w", ZIP_DEFLATED) as archive:
         archive.write(LICENSE, LICENSE.name)
         archive.write(ROOT / "README.md", "README.md")
-        for name in ("sources.md", "punchcutter-MIT.txt"):
-            archive.write(ROOT / "docs" / name, "docs/" + name)
+        for path in sorted((ROOT / "docs").glob("*.md")):
+            archive.write(path, path.relative_to(ROOT))
+        studio_notice = ROOT / "docs/punchcutter-MIT.txt"
+        archive.write(studio_notice, studio_notice.relative_to(ROOT))
+        for path in sorted((ROOT / "docs/screenshots").glob("*.webp")):
+            archive.write(path, path.relative_to(ROOT))
         for proof in sorted((ROOT / "specimens").glob("*.png")):
             archive.write(proof, proof.relative_to(ROOT))
         for family_zip in family_archives:
