@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 RELEASES = BUILD / "releases"
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 LICENSE = ROOT / "OFL.txt"
 REQUIRED = set(map(ord, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789àèéìòùæœß"))
 CARDS = [
@@ -22,6 +22,8 @@ CARDS = [
     ("chawton-script", "Jane Austen", "A letter for the morning", "LADY SUSAN  /  PAGE 28", "#e9dedf", "#422636"),
     ("arles-letter", "Vincent van Gogh", "La lumière de la chambre", "ARLES  /  16 OCTOBER 1888", "#eadfa8", "#3f3a21"),
     ("monticello-draft", "Thomas Jefferson", "Life, liberty & happiness", "ROUGH DRAFT  /  JUNE 1776", "#e1e6de", "#2c453f"),
+    ("amherst-pencil", "Emily Dickinson", "Her breast is fit for pearls —", "AMHERST  /  GRAPHITE MANUSCRIPTS", "#ede5e1", "#4c333f"),
+    ("trinity-notes", "Isaac Newton", "Of Quantity & Proportion", "CAMBRIDGE  /  MS ADD.3996", "#dee7e9", "#263c49"),
 ]
 
 
@@ -73,7 +75,9 @@ def specimen(card, font_path, compact=False):
     if not compact:
         set_text(canvas, "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm", (left, 526), 73, max_width, ink, font_path)
         set_text(canvas, "Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz", (left, 602), 73, max_width, ink, font_path)
-        set_text(canvas, "0123456789   À É È Ô Ù   à è é ô ù   Æ æ Œ œ", (left, 691), 58, max_width, ink, font_path)
+        extras = {"amherst-pencil": "   – —", "trinity-notes": "   ſ"}
+        figures = "0123456789   À É È Ô Ù   à è é ô ù   Æ æ Œ œ" + extras.get(slug, "")
+        set_text(canvas, figures, (left, 691), 58, max_width, ink, font_path)
     return canvas
 
 
@@ -140,7 +144,8 @@ def package(card, verified):
 def main():
     verified = [read_build(card) for card in CARDS]
     RELEASES.mkdir(parents=True, exist_ok=True)
-    gallery = Image.new("RGB", (1280, 640), "#edeae3")
+    rows = (len(CARDS) + 1) // 2
+    gallery = Image.new("RGB", (1280, 52 + rows * 294), "#edeae3")
     family_archives = []
     for index, (card, built) in enumerate(zip(CARDS, verified)):
         tile, archive = package(card, built)
