@@ -17,11 +17,11 @@ fi
 
 mkdir -p "$root/build"
 if [[ $# -eq 0 ]]; then
-  set -- trivulzio-quill chawton-script arles-letter monticello-draft
+  set -- trivulzio-quill chawton-script arles-letter monticello-draft amherst-pencil trinity-notes
 fi
 for family in "$@"; do
   case "$family" in
-    trivulzio-quill|chawton-script|arles-letter|monticello-draft) ;;
+    trivulzio-quill|chawton-script|arles-letter|monticello-draft|amherst-pencil|trinity-notes) ;;
     *) printf 'Unknown font family slug: %s\n' "$family" >&2; exit 2 ;;
   esac
   "$python_bin" "$punchcutter/scripts/punchcutter.py" build \

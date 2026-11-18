@@ -12,7 +12,10 @@ def install(glyph, drawings):
     for character, drawing in drawings.items():
         codepoint = ord(character)
         name = UV2AGL.get(codepoint, f"uni{codepoint:04X}")
-        case = "lc" if character.islower() else "uc"
+        if character in "0123456789":
+            case = "fig"
+        else:
+            case = "lc" if character.islower() else "uc"
         glyph(name, codepoint, case)(make_drawer(drawing))
 
 
@@ -26,7 +29,7 @@ def make_drawer(drawing):
         strokes.append(nodes)
 
     def draw(context):
-        height = context.cap if context.case == "uc" else context.xh
+        height = context.cap if context.case in {"uc", "fig"} else context.xh
         for nodes in strokes:
             pen = context.P()
             for index, (x, y, direction, pressure) in enumerate(nodes):

@@ -6,14 +6,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/qiaomu-fonts-v1.0.0.zip"><strong>下载全部四套</strong></a> ·
-  <a href="https://github.com/joeseesun/qiaomu-fonts/releases/tag/v1.0.0">单套下载</a> ·
+  <a href="https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/qiaomu-fonts-v1.1.0.zip"><strong>下载全部六套</strong></a> ·
+  <a href="https://github.com/joeseesun/qiaomu-fonts/releases/tag/v1.1.0">单套下载</a> ·
   <a href="docs/sources.md">手稿出处</a> ·
   <a href="OFL.txt">SIL OFL 1.1</a> ·
   <a href="#english">English</a>
 </p>
 
-![四套字体的实际排版样张。左上达芬奇，右上奥斯汀，左下梵高，右下杰斐逊](specimens/collection.png)
+![六套字体的排版样张。由上至下、从左到右为达芬奇、奥斯汀、梵高、杰斐逊、狄金森、牛顿](specimens/collection.png)
 
 ## 字体图鉴
 
@@ -21,14 +21,26 @@
 
 | 字体 | 取自哪份手稿 | 笔迹特征 | 下载 |
 | --- | --- | --- | --- |
-| **Trivulzio Quill** | 达芬奇《特里武尔齐奥手稿》 | 窄字身、长回钩，附镜像试写 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/trivulzio-quill.zip) · [样张](specimens/trivulzio-quill.png) |
-| **Chawton Script** | 简·奥斯汀《苏珊夫人》誊清稿 | 低字身、右倾、细长连笔 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/chawton-script.zip) · [样张](specimens/chawton-script.png) |
-| **Arles Letter** | 梵高在阿尔勒写给提奥的信 | 字身较直，笔画圆厚 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/arles-letter.zip) · [样张](specimens/arles-letter.png) |
-| **Monticello Draft** | 杰斐逊《独立宣言》草稿 | 窄斜的字形，紧凑的笔环 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/monticello-draft.zip) · [样张](specimens/monticello-draft.png) |
+| **Trivulzio Quill** | 达芬奇《特里武尔齐奥手稿》 | 窄字身、长回钩，附镜像试写 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/trivulzio-quill.zip) · [样张](specimens/trivulzio-quill.png) |
+| **Chawton Script** | 简·奥斯汀《苏珊夫人》誊清稿 | 低字身、右倾、细长连笔 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/chawton-script.zip) · [样张](specimens/chawton-script.png) |
+| **Arles Letter** | 梵高在阿尔勒写给提奥的信 | 字身较直，笔画圆厚 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/arles-letter.zip) · [样张](specimens/arles-letter.png) |
+| **Monticello Draft** | 杰斐逊《独立宣言》草稿 | 窄斜的字形，紧凑的笔环 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/monticello-draft.zip) · [样张](specimens/monticello-draft.png) |
+| **Amherst Pencil** | 狄金森写给苏珊的铅笔诗稿 | 柔细笔画、起伏基线、上扬的破折号 | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/amherst-pencil.zip) · [样张](specimens/amherst-pencil.png) |
+| **Trinity Notes** | 牛顿《三一学院笔记》 | 窄小写、紧凑字距、自绘数字和长 s | [ZIP](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/trinity-notes.zip) · [样张](specimens/trinity-notes.png) |
+
+## v1.1.0 新增样张
+
+**Amherst Pencil** 参考狄金森 1850 年代末的三份铅笔诗稿。轻笔压、略微参差的字脚和手写破折号，适合诗句和题签。
+
+![Amherst Pencil 样张，展示诗句、大小写字母、数字和重音字符](specimens/amherst-pencil.png)
+
+**Trinity Notes** 参考牛顿笔记的拉丁文正文和科学札记。紧凑的小写旁搭配手写数字，另含可直接输入的历史字形 `ſ`。
+
+![Trinity Notes 样张，展示标题、大小写字母、数字和重音字符](specimens/trinity-notes.png)
 
 ## 安装与试写
 
-- **桌面排版**　解压后任选 TTF 或 OTF 安装。四套均为 Regular 400，覆盖基本拉丁字母、数字、标点及常用重音字符。
+- **桌面排版**　解压后任选 TTF 或 OTF 安装。六套均为 Regular 400，覆盖基本拉丁字母、数字、标点及常用重音字符。
 - **网页排版**　将包内的 CSS 和 `webfonts/` 放在一起，引用 CSS 即可加载 WOFF2。
 - **修改字形**　下载包内有可编辑 UFO、绘图源文件和字形样张。字体采用 [SIL OFL 1.1](OFL.txt)，支持商用、嵌入和修改，具体条款见许可证。
 
@@ -46,7 +58,7 @@
 
 ## 还可以做哪些手稿？
 
-[下一批候选](docs/manuscript-candidates.md)收录了可查看原件的档案，包括狄金森的铅笔诗稿、牛顿的大学笔记、玛丽·雪莱的小说草稿和弗雷德里克·道格拉斯的亲笔信。也欢迎在 [Issues](https://github.com/joeseesun/qiaomu-fonts/issues) 提供手稿来源。
+[下一批候选](docs/manuscript-candidates.md)收录了可查看原件的档案，包括玛丽·雪莱的小说草稿、弗雷德里克·道格拉斯的亲笔信和惠特曼的诗稿。也欢迎在 [Issues](https://github.com/joeseesun/qiaomu-fonts/issues) 提供手稿来源。
 
 <details>
 <summary>从源码构建 · Build from source</summary>
@@ -58,7 +70,7 @@
 python scripts/package-fonts.py
 ```
 
-构建输出在 `build/<字体目录名>/`。在构建命令后附上字体目录名即可单独构建。打包脚本读取四套构建结果，验证字库并生成 `build/releases/` 下的 ZIP。首发四套字体通过 100 项构建检查，相关报告随包提供。
+构建输出在 `build/<字体目录名>/`。在构建命令后附上字体目录名即可单独构建。打包脚本验证六套字体的字库，并在 `build/releases/` 生成 ZIP。每套的构建报告随包提供。
 
 Python 3.10+, Cairo and the pinned Punchcutter revision above are required. Install Punchcutter's requirements in a virtual environment and run the two commands. See the build reports included in the release ZIPs.
 
@@ -66,8 +78,8 @@ Python 3.10+, Cairo and the pinned Punchcutter revision above are required. Inst
 
 ## English
 
-Qiaomu Fonts brings historical pen styles into contemporary Latin display type. [Download all four](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.0.0/qiaomu-fonts-v1.0.0.zip) or pick a family from the table. The first release covers Leonardo da Vinci, Jane Austen, Vincent van Gogh and Thomas Jefferson.
+Qiaomu Fonts brings historical pen styles into contemporary Latin display type. [Download all six](https://github.com/joeseesun/qiaomu-fonts/releases/download/v1.1.0/qiaomu-fonts-v1.1.0.zip) or pick a family from the table. Version 1.1 adds **Amherst Pencil**, based on Emily Dickinson’s graphite poems, and **Trinity Notes**, based on Isaac Newton’s college notebook.
 
-Install either the TTF or the OTF on your computer. For web use, keep the bundled CSS next to `webfonts/`. Open `fonts/studio.html` to try your text offline. Trivulzio Quill also includes `mirror.html` for right-to-left mirrored display. The release includes editable UFOs and source drawings. All four families are Regular 400 and cover Basic Latin and common accented letters. See the [manuscript references](docs/sources.md), [research shortlist](docs/manuscript-candidates.md) and [SIL Open Font License 1.1](OFL.txt).
+Install either the TTF or the OTF on your computer. For web use, keep the bundled CSS next to `webfonts/`. Open `fonts/studio.html` to try your text offline. Trivulzio Quill also includes `mirror.html` for right-to-left mirrored display. The release includes editable UFOs and source drawings. All six families are Regular 400 and cover Basic Latin and common accented letters. See the [manuscript references](docs/sources.md), [research shortlist](docs/manuscript-candidates.md) and [SIL Open Font License 1.1](OFL.txt).
 
 由[向阳乔木](https://qiaomu.ai/)维护 · [博客](https://blog.qiaomu.ai/) · [乔木推荐](https://tuijian.qiaomu.ai/) · [X @vista8](https://x.com/vista8) · [GitHub @joeseesun](https://github.com/joeseesun/) · 微信公众号「向阳乔木推荐看」
